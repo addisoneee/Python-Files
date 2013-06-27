@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def fun(x):
+  #This is where all the info on the function goes
+	if x < 28:
+		return 100000*x - 2721000
+	else:
+		return 79000
+
+vfun = np.vectorize(fun)
+
+x = np.linspace(27,29)
+y = vfun(x)
+
+plt.axis([27,29,-25000,90000])
+plt.plot(x,y,'-')
+plt.show()
